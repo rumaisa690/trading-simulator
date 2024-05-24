@@ -31,9 +31,9 @@ pip install -r requirements.txt
 3. Move trading_model.h5 and scaler.pkl to the models/ directory in your local project
 
 Run the Flask application:
-    ```sh
-    python simulator_app.py
-    ```
+```sh
+python simulator_app.py
+```
 
 Access the application:
 
