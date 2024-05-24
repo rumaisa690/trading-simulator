@@ -75,9 +75,9 @@ Prediction: The trained LSTM model predicts future stock prices based on histori
 
 
 ## Technologies Used
-**Backend**: Python, Flask
-**Data Processing**: numpy, scikit-learn, yfinance
-**Machine Learning**: TensorFlow, Keras
-**Frontend**: HTML, CSS, JavaScript
-**Model Training**: Google Colab
-**Deployment**: Local Flask server
+- **Backend**: Python, Flask
+- **Data Processing**: numpy, scikit-learn, yfinance
+- **Machine Learning**: TensorFlow, Keras
+- **Frontend**: HTML, CSS, JavaScript
+- **Model Training**: Google Colab
+- **Deployment**: Local Flask server
