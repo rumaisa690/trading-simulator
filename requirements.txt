@@ -1,0 +1,5 @@
+flask
+numpy
+yfinance
+scikit-learn
+tensorflow

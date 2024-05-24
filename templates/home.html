@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Trading Simulator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Financial Trading Strategies Simulator</h1>
+
+        <!-- backtesting form -->
+        <div class="section">
+            <h2>Backtest Strategy</h2>
+            <p>Input all dates in the following format: year-month-date</p>
+            <form id="backtest-form">
+                <input type="text" id="symbol" name="symbol" placeholder="Enter Stock Ticker symbol..." required>
+                <input type="date" id="start-date" name="start_date" placeholder="Enter start date..." required>
+                <input type="date" id="end-date" name="end_date" placeholder="Enter end date..." required>
+                <input type="transaction_cost" id="transaction cost" name="transaction_cost" placeholder="Enter transaction cost..." required>
+                <button type="submit">Run Backtest</button>
+            </form>
+            <div id="backtest-result"></div>
+        </div>
+
+        <!-- optimzation form -->
+        <div class="section">
+            <h2>Optimize Strategy</h2>
+            <form id="optimize-form">
+                <button type="submit">Optimize Parameters</button>
+            </form>
+            <div id="optimize-result"></div>
+        </div>
+
+        <!--  prediction form -->
+        <div class="section">
+            <h2>Predict Prices</h2>
+            <form id="predict-form">
+                <p>Input all dates in the following format: year-month-date</p>
+                <p>Please select a date between 1990-01-01 and 2024-01-01</p>
+                <input type="text" id="symbol-predict" name="symbol" placeholder="Enter Stock Ticker symbol..." required>
+                <input type="date" id="start-date-predict" name="start_date" placeholder="Enter start date..." required>
+                <input type="date" id="end-date-predict" name="end_date" placeholder="Enter end date..." required>
+                <button type="submit">Predict</button>
+            </form>
+            <div id="predict-result"></div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for form submissions
+        function handle(formId, endpoint, resultId) {
+            document.getElementById(formId).addEventListener('submit', function(e) {
+                e.preventDefault();
+                let formData = new FormData(this);
+                fetch(endpoint, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById(resultId).innerText = data.hasOwnProperty('performance') 
+                        ? `Performance: ${data.performance}` 
+                        : `Best Parameters: ${JSON.stringify(data)}`;
+                })
+                .catch(error => console.error('Error:', error));
+            });
+        }
+    
+        // Use the function for each form
+        handle('backtest-form', '/backtest', 'backtest-result');
+        handle('optimize-form', '/optimize', 'optimize-result');
+        handle('predict-form', '/predict', 'predict-result');
+    </script>
+</body>
+</html>

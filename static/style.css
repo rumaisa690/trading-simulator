@@ -1,0 +1,60 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a7d5ef;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* header style */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* each section */
+.section {
+    margin-bottom: 40px;
+}
+
+/* form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* form inputs */
+input[type="text"],
+input[type="date"],
+input[type="transaction_cost"] {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* submit button */
+button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0d3e73;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* displaying results */
+#backtest-result,
+#optimize-result,
+#predict-result {
+    text-align: center;
+    font-weight: bold;
+}
