@@ -45,7 +45,7 @@ Home Page:
 
 Backtesting Section:
 1. Enter a stock ticker symbol, start date, end date, and transaction cost (all dates in format year-month-day)
-2. Clcik 'Run Backtest' to see the performance of the backtest strategy
+2. Click 'Run Backtest' to see the performance of the backtest strategy
 
 Optimize Strategy:
 1. Click 'Optimize Parameters to find the best parameters for the RSI strategy
