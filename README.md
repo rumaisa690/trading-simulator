@@ -55,12 +55,12 @@ Predict Prices
 2. Click 'Predict' to get the predicted stock prices using the pre-trained LSTM model
 
 ## Project Structure
-simulator_app.py: The main Flask application
-static/: CSS files for styling
-templates/: HTML template for home screen
-models/: Directory for saving the trained models (trading_model.h5 and scaler.pkl)
-train_model.ipynb: Jupyter notebook for training the LSTM model
-requirements.txt: List of dependencies to install
+- simulator_app.py: The main Flask application
+- static/style.css: CSS fils for styling
+- templates/home.html: HTML template for home screen
+- models/: Directory for saving the trained models (trading_model.h5 and scaler.pkl)
+- train_model.ipynb: Jupyter notebook for training the LSTM model
+- requirements.txt: List of dependencies to install
 
 ## Explanation of Algorithms
 1. Backtesting with RSI
